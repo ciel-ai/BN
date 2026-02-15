@@ -2310,6 +2310,7 @@ const ProductDetail = () => {
                             <div className="gallery-main">
                                 {isVideo(displayProduct.images[selectedImage]) ? (
                                     <video
+                                        key={displayProduct.images[selectedImage]}
                                         src={displayProduct.images[selectedImage]}
                                         autoPlay
                                         loop
