@@ -1,0 +1,468 @@
+/* ============================================
+   WHY PARTNER PAGE - INDUSTRIAL PROFESSIONAL REDESIGN
+   ============================================ */
+
+/* 
+   THEME VARIABLES 
+   Using project's standard colors
+   Primary: #1e3a5f
+   Secondary: #4a90e2
+*/
+
+.why-partner-industrial {
+    overflow-x: hidden;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.industrial-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a8e 100%);
+    padding: 4rem 0;
+    position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 280px;
+}
+
+/* Optional Overlay pattern */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/pins.png?v=final');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-label {
+    display: inline-block;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-secondary);
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    white-space: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.hero-title span {
+    color: white;
+}
+
+/* Cursor for Typewriter */
+.hero-title .cursor {
+    color: var(--color-secondary);
+    font-weight: 100;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ============================================
+   SUPPLY CHAIN PROCESS FLOW
+   ============================================ */
+
+
+.why-partner-industrial .process-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Connected flow */
+    position: relative;
+    max-width: 900px;
+    margin: 4rem auto 0;
+}
+
+/* The vertical connector line */
+.why-partner-industrial .process-flow::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    bottom: 0;
+    left: 24px;
+    /* Align with marker center */
+    width: 2px;
+    background: var(--color-gray-200);
+    z-index: 0;
+}
+
+.why-partner-industrial .process-step {
+    display: flex;
+    gap: 3rem;
+    position: relative;
+    padding-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+.why-partner-industrial .process-step:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.why-partner-industrial .process-step:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.why-partner-industrial .process-step:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.why-partner-industrial .process-step:nth-child(4) {
+    animation-delay: 0.7s;
+    padding-bottom: 0;
+}
+
+/* Remove line for last item if desired, or can leave to suggest continuity */
+
+
+/* The circle marker */
+.step-marker {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    box-shadow: 0 0 0 8px white;
+    font-family: var(--font-heading);
+}
+
+.process-card {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.why-partner-industrial .process-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a8e 100%);
+}
+
+.why-partner-industrial .process-card:hover h3,
+.why-partner-industrial .process-card:hover p,
+.why-partner-industrial .process-card:hover li {
+    color: #ffffff;
+}
+
+.why-partner-industrial .process-card:hover .process-icon {
+    background: #ffffff;
+    color: var(--color-primary);
+}
+
+.why-partner-industrial .process-card:hover .process-points li svg {
+    color: #ffffff;
+}
+
+.process-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-gray-50);
+    color: var(--color-primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.process-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.process-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-gray-900);
+}
+
+.process-content p {
+    color: var(--color-gray-600);
+    margin-bottom: 1.5rem;
+}
+
+.process-points {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.process-points li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--color-gray-700);
+    font-weight: 500;
+}
+
+.process-points li svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-secondary);
+}
+
+/* ============================================
+   ADVANTAGE SPLIT SECTION
+   ============================================ */
+
+.advantage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.advantage-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.advantage-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.advantage-image:hover img {
+    transform: scale(1.05);
+}
+
+.trust-badge {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--color-secondary);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.advantage-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.advantage-features {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.feature-item svg {
+    width: 40px;
+    height: 40px;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.feature-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+    margin: 0;
+}
+
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.industrial-cta {
+    background: #0d1117;
+    /* Very dark gray/black */
+    padding: 6rem 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-content h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+    font-size: 1.25rem;
+    color: var(--color-gray-400);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2rem;
+    }
+
+    .stat-item {
+        border-right: none;
+    }
+
+    .advantage-split {
+        grid-template-columns: 1fr;
+    }
+
+    .advantage-image {
+        order: -1;
+        max-height: 400px;
+    }
+
+    /* Tablet adjustment */
+    .hero-title {
+        font-size: 2.25rem;
+        white-space: normal;
+        /* Allow wrapping on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+        white-space: normal;
+        /* Allow wrapping on mobile */
+    }
+
+    .industrial-hero {
+        padding: 3rem 0;
+        min-height: 200px;
+    }
+
+    .industrial-hero .hero-title {
+        font-size: 1.875rem;
+    }
+
+    .industrial-hero .hero-description {
+        font-size: 1rem;
+    }
+
+    .industrial-stats {
+        margin-top: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .process-flow::before {
+        left: 20px;
+        display: none;
+        /* Hide connector on mobile */
+    }
+
+    .process-step {
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .step-marker {
+        display: none;
+        /* Hide marker on mobile */
+    }
+
+    .process-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .process-points {
+        text-align: left;
+        width: 100%;
+    }
+
+    .process-points li {
+        justify-content: center;
+    }
+}

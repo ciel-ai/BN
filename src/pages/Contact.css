@@ -1,0 +1,341 @@
+/* Page Hero */
+.page-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a8e 100%);
+    color: var(--color-white);
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 280px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/NEEDL.png?v=final');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero h1 {
+    color: var(--color-white);
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Contact Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+/* Contact Information */
+.contact-info {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    height: fit-content;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-icon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.info-content h4 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.info-content p {
+    color: var(--color-gray-600);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.info-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.info-content a:hover {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form-wrapper h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--color-gray-800);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Location Section */
+.location-section {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.map-container {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: var(--color-gray-200);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+}
+
+.location-icon {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+.location-section h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.location-section p {
+    color: var(--color-gray-600);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 3rem 0;
+        min-height: 200px;
+    }
+
+    .page-hero h1 {
+        font-size: 1.875rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact-info {
+        order: 2;
+        padding: 1.5rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .info-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .info-content h4 {
+        font-size: 0.9375rem;
+    }
+
+    .info-content p {
+        font-size: 0.875rem;
+    }
+
+    .contact-form-wrapper {
+        order: 1;
+        padding: 1.5rem;
+    }
+
+    .contact-form-wrapper h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-form {
+        gap: 1.25rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.875rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.9375rem;
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+    }
+
+    .submit-btn {
+        margin-top: 0.5rem;
+    }
+
+    .location-section {
+        padding: 2.5rem 0;
+    }
+
+    .location-icon svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .location-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .location-section p {
+        font-size: 0.9375rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}

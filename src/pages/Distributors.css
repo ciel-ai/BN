@@ -1,0 +1,342 @@
+/* Hero Section */
+.distributors-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a8e 100%);
+    color: var(--color-white);
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 280px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/NEEDL.png?v=final');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.distributors-hero h1 {
+    font-size: 2.75rem;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.distributors-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.benefit-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(30, 58, 95, 0.15);
+    text-align: center;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefit-card:hover {
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a8e 100%);
+}
+
+.benefit-card:hover h3 {
+    color: #ffffff;
+}
+
+.benefit-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.benefit-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a8e 100%);
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(30, 58, 95, 0.25);
+}
+
+.benefit-card:hover .benefit-icon {
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(30, 58, 95, 0.35);
+}
+
+.benefit-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon svg {
+    color: var(--color-primary);
+}
+
+.benefit-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.benefit-card p {
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Enquiry Layout */
+.enquiry-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Eligibility Section */
+.eligibility-section {
+    position: sticky;
+    top: 100px;
+}
+
+.eligibility-description {
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.eligibility-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.eligibility-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    color: var(--color-gray-800);
+    font-size: 1rem;
+}
+
+.eligibility-list li svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Enquiry Form */
+.enquiry-form-wrapper {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.enquiry-form-wrapper h3 {
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    color: var(--color-gray-600);
+    margin-bottom: 2rem;
+}
+
+.enquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--color-gray-800);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--color-primary);
+    padding: 4rem 0;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .distributors-hero {
+        padding: 3rem 0;
+        min-height: 200px;
+    }
+
+    .distributors-hero h1 {
+        font-size: 1.875rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .enquiry-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .eligibility-section {
+        position: static;
+    }
+
+    .enquiry-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-section {
+        padding: 2.5rem 0;
+    }
+
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-description {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enquiry-layout {
+        grid-template-columns: 1fr 1.25fr;
+    }
+}

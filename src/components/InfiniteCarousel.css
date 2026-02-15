@@ -1,0 +1,56 @@
+.infinite-carousel {
+    background-color: var(--color-primary);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+.carousel-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    /* Medium bold as per image style */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.separator {
+    margin-left: 2rem;
+    margin-right: 1rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover for better readability if needed */
+.infinite-carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        font-size: 0.875rem;
+    }
+}

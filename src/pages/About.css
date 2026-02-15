@@ -1,0 +1,531 @@
+/* Page Hero */
+.page-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a8e 100%);
+    color: var(--color-white);
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 280px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/pins.png?v=final');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero h1 {
+    color: var(--color-white);
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Legacy Section */
+.legacy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.legacy-content p {
+    color: var(--color-gray-600);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.legacy-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.legacy-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Vision & Mission */
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.vm-card {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.vm-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.vm-card h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.vm-card p {
+    color: var(--color-gray-600);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Core Values */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.value-card {
+    background: var(--color-white);
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all var(--transition-base);
+    border: 1px solid var(--color-gray-200);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a8e 100%);
+    border-color: transparent;
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+    color: #ffffff;
+}
+
+.value-card h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.value-card:hover h3 {
+    color: #ffffff;
+}
+
+.value-card p {
+    color: var(--color-gray-600);
+    margin: 0;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.value-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Section */
+.about .section {
+    padding: 3rem 0;
+}
+
+/* 
+   --------------------------------------------------------------
+   TIMELINE REDESIGN - PREMIUM MINIMALIST
+   --------------------------------------------------------------
+*/
+
+.timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 4rem 0;
+}
+
+/* Spine: Solid, subtle line centered */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: var(--color-gray-300);
+    /* No glowing shadow, just clean structure */
+}
+
+.timeline-thread {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 4px;
+    background: linear-gradient(to bottom, var(--color-primary), #3b82f6);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+    z-index: 1;
+    transition: height 0.1s linear;
+    border-radius: 4px;
+}
+
+/* Timeline Item Container */
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    /* Space between columns (spine in middle) */
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+    width: 100%;
+
+    /* Reveal Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Markers: Crisp circles */
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-white);
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 0 0 0 4px var(--color-white);
+    /* White ring creates separation from spine */
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+    background-color: var(--color-primary);
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 0 6px rgba(30, 58, 95, 0.1);
+}
+
+/* Content Cards: Uniform Fixed Size (~1980 content size) */
+.timeline-content {
+    width: 350px;
+    /* FIXED WIDTH for uniformity */
+    max-width: 100%;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-gray-200);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--color-primary-light);
+}
+
+/* Desktop Connectors (Horizontal Lines) */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 2rem;
+    /* Reach into the gap */
+    height: 2px;
+    background-color: var(--color-gray-300);
+    transition: width 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content::before {
+    background-color: var(--color-primary-light);
+}
+
+/* Alternating Logic (Desktop) */
+
+/* Odd: Text Left */
+.timeline-item:nth-child(odd) .timeline-content {
+    grid-column: 1;
+    justify-self: end;
+    text-align: right;
+    margin-right: 0;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -2rem;
+    /* Matches width */
+}
+
+/* Even: Text Right */
+.timeline-item:nth-child(even) .timeline-content {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+    margin-left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -2rem;
+    /* Matches width */
+}
+
+
+/* Manufacturing & Export Capabilities */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.capability-card {
+    background: var(--color-white);
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid var(--color-gray-100);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.capability-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.capability-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 8px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--color-primary-light);
+}
+
+.capability-card:hover::before {
+    opacity: 1;
+}
+
+.capability-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    transition: transform 0.4s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.capability-card:hover .capability-icon {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.capability-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.capability-card:hover h3 {
+    color: var(--color-primary);
+}
+
+.capability-card p {
+    color: var(--color-gray-600);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--color-primary);
+    padding: 4rem 0;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    /* Mobile Timeline Redesign */
+    .timeline {
+        padding: 2rem 0;
+    }
+
+    /* Spine: Locked to left */
+    .timeline::before {
+        left: 30px;
+        /* Fixed position */
+        transform: none;
+    }
+
+    .timeline-thread {
+        left: 31px;
+        /* Center over the 2px spine at 30px */
+        width: 4px;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        display: flex !important;
+        /* Override Grid */
+        flex-direction: column !important;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+        padding-left: 80px;
+        /* Clear space for spine + spacing */
+        width: 100%;
+        gap: 0;
+        /* Reset grid gap */
+    }
+
+
+    /* Marker: Locked to left spine */
+    .timeline-marker {
+        left: 30px;
+        top: 2rem;
+        /* Align approx with card top */
+        transform: translate(-50%, -50%) !important;
+    }
+
+    /* Connector: From spine to card (Mobile only) */
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        left: 30px;
+        /* Start at spine */
+        top: 2rem;
+        /* Same height as marker */
+        width: 50px;
+        /* Reach to card */
+        height: 2px;
+        background-color: var(--color-gray-300);
+        z-index: 1;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin: 0 !important;
+        text-align: left !important;
+        padding: 1.5rem;
+    }
+
+    /* Hide Desktop Connectors on Mobile */
+    .timeline-content::before {
+        display: none;
+    }
+
+    /* Reset Odd/Even logic for mobile */
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before,
+    .timeline-item:nth-child(even) .timeline-content::before {
+        content: none;
+    }
+
+    /* Legacy Grid Mobile */
+    .legacy-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .legacy-image {
+        order: -1;
+    }
+
+    /* Hero Padding Mobile */
+    .page-hero {
+        padding: 3rem 0;
+        min-height: 200px;
+    }
+
+    .page-hero h1 {
+        font-size: 1.875rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .legacy-grid {
+        gap: 2rem;
+    }
+}

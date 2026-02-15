@@ -1,0 +1,132 @@
+.global-map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    /* Fallback */
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.global-map-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    background: #f8fafc;
+    border-radius: 16px;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.world-map-svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Hotspots */
+.map-hotspot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hotspot-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.map-hotspot:hover .hotspot-dot {
+    background-color: #ef4444;
+    /* Red highlight */
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.hotspot-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: rgba(30, 58, 95, 0.3);
+    /* Primary color low opacity */
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+.map-hotspot:hover .hotspot-pulse {
+    animation: none;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(239, 68, 68, 0.2);
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Tooltip */
+.map-tooltip {
+    position: absolute;
+    bottom: 100%;
+    /* Above the dot */
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: var(--color-gray-900);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+}
+
+.map-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-gray-900) transparent transparent transparent;
+}
+
+.map-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+}

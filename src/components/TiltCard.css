@@ -1,0 +1,42 @@
+.tilt-card-wrapper {
+    position: relative;
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+    /* Ensure content stays above background */
+}
+
+.tilt-card-content {
+    transform: translateZ(20px);
+    /* Lift content slightly */
+    height: 100%;
+    width: 100%;
+}
+
+.tilt-card-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    /* Above content background, below text if structured right, or overlay */
+    border-radius: inherit;
+    /* Match parent border radius */
+    pointer-events: none;
+    /* Let clicks pass through */
+    mix-blend-mode: overlay;
+    /* Better blending with colors */
+}
+
+/* Enhancements for child elements to pop out more */
+.tilt-card-wrapper h3,
+.tilt-card-wrapper .benefit-icon,
+.tilt-card-wrapper .process-icon {
+    transform: translateZ(30px);
+    transition: transform 0.3s ease;
+}
+
+.tilt-card-wrapper p {
+    transform: translateZ(20px);
+}

@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Disallow admin panel and authentication pages
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /login
+
+# Allow all product pages
+Allow: /products
+Allow: /products/*
+
+# Sitemap location
+Sitemap: https://bellneedles.com/sitemap.xml

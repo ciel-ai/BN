@@ -1,0 +1,101 @@
+.contact-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.contact-popup-content {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    width: 90%;
+    max-width: 450px;
+    /* max-height: 90vh; */
+    /* overflow-y: auto; */
+    position: relative;
+    animation: slideUp 0.3s ease-in-out;
+}
+
+.contact-popup-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-gray-600);
+    transition: color 0.2s;
+}
+
+.contact-popup-close:hover {
+    color: var(--color-primary);
+}
+
+.contact-popup-form {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.contact-popup-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.contact-popup-field label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+}
+
+.contact-popup-field input,
+.contact-popup-field textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.contact-popup-field input:focus,
+.contact-popup-field textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-popup-content {
+        padding: var(--spacing-lg);
+        width: 95%;
+    }
+
+    .contact-popup-close {
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+}

@@ -1,0 +1,42 @@
+.magnifier-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: crosshair;
+    border-radius: 12px;
+}
+
+.magnifier-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Or cover depending on design, contain is safer for products */
+    display: block;
+}
+
+.magnifier-glass {
+    transition: opacity 0.2s ease;
+    cursor: none;
+}
+
+.magnifier-hint {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-gray-700);
+    pointer-events: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.magnifier-container:hover .magnifier-hint {
+    opacity: 0;
+}
