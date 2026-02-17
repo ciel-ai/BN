@@ -107,7 +107,7 @@ const ProductCategory = () => {
                 { id: 'panda-brass-gold', title: 'Panda Brass Gold Safety Pins', image: '/assets/images/panda pins/Panda Brass Gold Safety Pins.jpg', model: 'PB00', packing: 'Jar', usage: 'Tagging', material: 'Brass', color: 'Gold' },
                 { id: 'panda-brass-black', title: 'Panda Brass Black Safety Pins', image: '/assets/images/panda pins/Panda Brass black Safety Pins.jpg', model: 'PBB00', packing: 'Jar', usage: 'Tagging', material: 'Brass', color: 'Black' },
                 { id: 'panda-brass-nickel', title: 'Panda Brass Nickel Plated Safety Pins', image: '/assets/images/panda pins/3  Silver 00.jpg', model: 'PBS000', packing: 'Jar', usage: 'Tagging', material: 'Brass', color: 'Silver' },
-                { id: 'panda-bulb-brass', title: 'Bulb Brass Safety Pins', image: '/images/safety-pins.png', model: 'Pear', packing: 'Jar', usage: 'Garment Tagging', material: 'Brass', color: 'Multi-Color' },
+                { id: 'panda-bulb-brass', title: 'Bulb Brass Safety Pins', image: '/assets/images/panda pins/colourpins.png', model: 'Pear', packing: 'Jar', usage: 'Garment Tagging', material: 'Brass', color: 'Multi-Color' },
                 { id: 'panda-pear-shaped', title: 'Pear Shaped Brass Safety Pins', image: '/assets/images/panda pins/Pear Shaped Brass Safety Pins.png', model: 'BRASS', packing: 'Jar', usage: 'Tags', material: 'Brass', color: 'Multi-Color' }
             ]
         },
