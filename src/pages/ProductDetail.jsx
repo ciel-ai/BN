@@ -1969,7 +1969,13 @@ const ProductDetail = () => {
             description: 'Bulb safety pins are widely used for garment tagging. We deal in lead free nickel free brass bulb safety pins. Size: 22mm.',
             inStock: true,
             datasheet: '/assets/datasheets/PANDA PINS.pdf',
-            images: ['/images/safety-pins.png'],
+            images: [
+                '/assets/images/panda pins/colourpins.png',
+                '/assets/images/panda pins/sp1.png',
+                '/assets/images/panda pins/sp2.png',
+                '/assets/images/panda pins/sp3.png',
+                '/assets/images/panda pins/sp4.png'
+            ],
             specifications: {
                 'Material': 'Brass',
                 'Quantity Per Pack': '1000 Pieces',
